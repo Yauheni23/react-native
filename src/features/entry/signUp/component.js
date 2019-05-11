@@ -8,18 +8,19 @@ import {
 } from 'react-native';
 
 export class SignUp extends React.Component {
-  constructor(props) {
-    super(props);
-    this.login = React.createRef();
-    this.password = React.createRef();
-    this.mail = React.createRef();
+  state = {
+    name: '',
+    username: '',
+    password: '',
+    mail: '',
   }
 
   signUp = () => {
     this.props.signUp({
-      login: this.login.current.value,
-      password: this.password.current.value,
-      mail: this.mail.current.value
+      name: this.state.name,
+      username: this.state.username,
+      password: this.state.password,
+      mail: this.state.mail,
     })
   }
   render() {
@@ -27,20 +28,30 @@ export class SignUp extends React.Component {
       <View>
         <ScrollView>
           <Text> Register </Text>
+          <Text> Name </Text>
+          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
+            placeholder="Name"
+            value={this.state.name}
+            onChangeText={(name) => this.setState({name})}
+          />
           <Text> Username </Text>
           <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
-            placeholder="Login"
-            ref={this.login}
+            placeholder="Username"
+            value={this.state.username}
+            onChangeText={(username) => this.setState({username})}
           />
           <Text> Password </Text>
           <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
             placeholder="Password"
-            ref={this.password}
+            secureTextEntry={true}
+            value={this.state.password}
+            onChangeText={(password) => this.setState({password})}
           />
           <Text> Mail </Text>
           <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
-            placeholder="Password"
-            ref={this.mail}
+            placeholder="Mail"
+            value={this.state.mail}
+            onChangeText={(mail) => this.setState({mail})}
           />
           <Button onPress={this.signUp}
             title="Sign Up"

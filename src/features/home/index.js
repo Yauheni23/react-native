@@ -1,13 +1,13 @@
 import { connect } from 'react-redux';
 import * as actions from './actions';
 import { Home } from './component';
-import { getIsVisibleHome } from './selector';
+import { getToken } from '../entry/selector'
 import { createStructuredSelector } from 'reselect';
 
 export { homeActions, homeReducer } from './reducer';
 
 export const mapStateToProps = createStructuredSelector({
-  isVisibleHome: getIsVisibleHome(),
+  token: getToken(),
 });
 
 export const mapDispatchToProps = dispatch => ({

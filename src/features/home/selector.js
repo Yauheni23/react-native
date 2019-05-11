@@ -1,8 +1,8 @@
 import { createSelector } from 'reselect';
 
-export const homeReducer = state => state.homeReducer;
+export const homeReducer = state => state.entryReducer;
 
-export const getIsVisibleHome = () => createSelector(
-  homeReducer,
-  home => home.isVisibleHome,
+export const getIsLogin = () => createSelector(
+  entryReducer,
+  entry => entry.isLogin,
 );

@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
 import * as actions from './actions';
 import { Entry } from './component';
-import { getIsLogin } from './selector';
+import { getToken, getIsLoading, getError } from './selector';
 import { createStructuredSelector } from 'reselect';
 
 export { entryActions, entryReducer } from './reducer';
 
 export const mapStateToProps = createStructuredSelector({
-  isLogin: getIsLogin(),
+  token: getToken(),
+  isLoading: getIsLoading(),
+  error: getError()
 });
 
 export const mapDispatchToProps = dispatch => ({

@@ -5,19 +5,21 @@ import {
   TextInput,
   Button,
   View,
+  AsyncStorage 
 } from 'react-native';
 
 export class SignIn extends React.Component {
-  constructor(props) {
-    super(props);
-    this.login = React.createRef();
-    this.password = React.createRef();
+  
+  state = {
+    currentUsername: '',
+    username: '',
+    password: ''
   }
 
   signIn = () => {
     this.props.signIn({
-      login: this.login.current.value,
-      password: this.password.current.value
+      username: this.state.username,
+      password: this.state.password
     })
   }
   
@@ -25,15 +27,18 @@ export class SignIn extends React.Component {
     return (
       <View>
         <ScrollView>
-          <Text> Login </Text>
+          <Text>Login</Text>
           <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
             placeholder="Login"
-            ref={this.login}
+            onChangeText={(username) => this.setState({username})}
+            value={this.state.username}
           />
           <Text> Password </Text>
           <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
             placeholder="Password"
-            ref={this.password}
+            secureTextEntry={true}
+            onChangeText={(password) => this.setState({password})}
+            value={this.state.password}
           />
           <Button onPress={this.signIn}
             title="Login"
