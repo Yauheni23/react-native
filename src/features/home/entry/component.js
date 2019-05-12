@@ -6,8 +6,8 @@ import {
   StyleSheet,
   ActivityIndicator,
 } from 'react-native';
-import { SignIn } from './signIn/component';
-import { SignUp } from './signUp/component';
+import { SignIn } from '../signIn/component';
+import { SignUp } from '../signUp/component';
 
 
 export class Entry extends React.Component {
@@ -34,10 +34,8 @@ export class Entry extends React.Component {
               />
               <Text style={styles.red}>{this.props.error}</Text>
             </View>
-            :
-            <ActivityIndicator size="large" color="#00ff00"/>
+          : <ActivityIndicator size="large" color="#00ff00"/>
         }
-        <Text>{this.props.token ? this.props.token.accessToken : null}</Text>
       </View>
     )
   }
