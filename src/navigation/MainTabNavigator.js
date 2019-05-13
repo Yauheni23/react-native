@@ -2,11 +2,9 @@ import React from 'react';
 import { createStackNavigator, createBottomTabNavigator } from 'react-navigation';
 
 import TabBarIcon from '../components/TabBarIcon';
-// import HomeScreen from '../screens/HomeScreen';
 import Home from '../features/home';
-import LinksScreen from '../screens/LinksScreen';
+import Guides from '../features/guides';
 import SettingsScreen from '../screens/SettingsScreen';
-import ProfileScreen from '../screens/ProfileScreen'
 
 const HomeStack = createStackNavigator({
   Home: Home,
@@ -22,12 +20,12 @@ HomeStack.navigationOptions = {
   ),
 };
 
-const LinksStack = createStackNavigator({
-  Links: LinksScreen,
+const GuidesStack = createStackNavigator({
+  Guides: Guides
 });
 
-LinksStack.navigationOptions = {
-  tabBarLabel: 'Links',
+GuidesStack.navigationOptions = {
+  tabBarLabel: 'Guides',
   tabBarIcon: ({ focused }) => (
     <TabBarIcon
       focused={focused}
@@ -50,23 +48,8 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-const ProfileStack = createStackNavigator({
-  Profile: ProfileScreen,
-});
-
-ProfileStack.navigationOptions = {
-  tabBarLabel: 'Profile',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name='md-contact'
-    />
-  ),
-};
-
 export default createBottomTabNavigator({
   HomeStack,
-  LinksStack,
+  GuidesStack,
   SettingsStack,
-  ProfileStack,
 });

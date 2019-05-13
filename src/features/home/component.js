@@ -10,7 +10,7 @@ export class Home extends React.Component {
 
   render() {
     return (
-      <View>
+      <View style={{padding: 10, margin: 5}}>
         <ScrollView>
           {this.props.isProfile
             ? <Profile exit={this.props.exit} />

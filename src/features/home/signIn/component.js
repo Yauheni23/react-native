@@ -9,7 +9,6 @@ import {
 } from 'react-native';
 
 export class SignIn extends React.Component {
-  
   state = {
     currentUsername: '',
     username: '',
@@ -27,24 +26,28 @@ export class SignIn extends React.Component {
     return (
       <View>
         <ScrollView>
-          <Text>Login</Text>
-          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
+          <Text style={{textAlign: "center", fontSize: 25}}>Login</Text>
+          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'gray', paddingLeft: 5 }}
             placeholder="Login"
             onChangeText={(username) => this.setState({username})}
             value={this.state.username}
           />
-          <Text> Password </Text>
-          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
+          <Text style={{textAlign: "center", fontSize: 25}}> Password </Text>
+          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'gray', paddingLeft: 5 }}
             placeholder="Password"
             secureTextEntry={true}
             onChangeText={(password) => this.setState({password})}
             value={this.state.password}
           />
-          <Button onPress={this.signIn}
+          <View style={{padding: 10}}>
+            <Button onPress={this.signIn}
+            style={{margin: 40}}
             title="Login"
             color="#00ff00"
             accessibilityLabel="Sign in"
           />
+          </View>
+          
         </ScrollView>
       </View>
     )

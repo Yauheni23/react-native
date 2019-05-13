@@ -27,37 +27,39 @@ export class SignUp extends React.Component {
     return (
       <View>
         <ScrollView>
-          <Text> Register </Text>
-          <Text> Name </Text>
-          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
+          <Text style={{ textAlign: "center", fontSize: 30, color: 'orange' }}> Register </Text>
+          <Text style={{ textAlign: "center", fontSize: 25 }}> Name </Text>
+          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'gray', paddingLeft: 5 }}
             placeholder="Name"
             value={this.state.name}
-            onChangeText={(name) => this.setState({name})}
+            onChangeText={(name) => this.setState({ name })}
           />
-          <Text> Username </Text>
-          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
+          <Text style={{ textAlign: "center", fontSize: 25 }}> Username </Text>
+          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'gray', paddingLeft: 5 }}
             placeholder="Username"
             value={this.state.username}
-            onChangeText={(username) => this.setState({username})}
+            onChangeText={(username) => this.setState({ username })}
           />
-          <Text> Password </Text>
-          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
+          <Text style={{ textAlign: "center", fontSize: 25 }}> Password </Text>
+          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'gray', paddingLeft: 5 }}
             placeholder="Password"
             secureTextEntry={true}
             value={this.state.password}
-            onChangeText={(password) => this.setState({password})}
+            onChangeText={(password) => this.setState({ password })}
           />
-          <Text> Mail </Text>
-          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'red' }}
+          <Text style={{ textAlign: "center", fontSize: 25 }}> Mail </Text>
+          <TextInput style={{ height: 40, borderWidth: 1, borderColor: 'gray', paddingLeft: 5 }}
             placeholder="Mail"
             value={this.state.mail}
-            onChangeText={(mail) => this.setState({mail})}
+            onChangeText={(mail) => this.setState({ mail })}
           />
-          <Button onPress={this.signUp}
-            title="Sign Up"
-            color="#00ff00"
-            accessibilityLabel="Sign Up"
-          />
+          <View style={{ padding: 10 }}>
+            <Button onPress={this.signUp}
+              title="Sign Up"
+              color="#00ff00"
+              accessibilityLabel="Sign Up"
+            />
+          </View>
         </ScrollView>
       </View>
     )

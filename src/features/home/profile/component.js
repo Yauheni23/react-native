@@ -44,14 +44,14 @@ export class Profile extends React.Component {
 
   render() {
     return (
-      <View>
+      <View >
         <ScrollView>
-          <Text> Profile </Text>
-          <Text> Name: {this.state.name} </Text>
-          <Text> Username: {this.state.username} </Text>
-          <Text> Email: {this.state.email} </Text>
-          <Text> Role: {this.state.role} </Text>
-          <Text> Count guides: {this.state.countGuides} </Text>
+          <Text style={{fontSize: 24, textAlign: "center"}}> Profile </Text>
+          <Text style={{fontSize: 20}}> Name: {this.state.name} </Text>
+          <Text style={{fontSize: 20}}> Username: {this.state.username} </Text>
+          <Text style={{fontSize: 20}}> Email: {this.state.email} </Text>
+          <Text style={{fontSize: 20}}> Role: {this.state.role} </Text>
+          <Text style={{fontSize: 20}}> Count guides: {this.state.countGuides} </Text>
           <Button onPress={this.exit}
             title="Exit"
             color="#ff0000"
